@@ -1,0 +1,11 @@
+## PAGE
+page {
+	template {
+		# cat=example package: advanced/100/100; type=string; label=Layout Root Path: Path to layouts
+		layoutRootPath = EXT:example_package/Resources/Private/Layouts/
+		# cat=example package: advanced/100/110; type=string; label=Partial Root Path: Path to partials
+		partialRootPath = EXT:example_package/Resources/Private/Partials/
+		# cat=example package: advanced/100/120; type=string; label=Template Root Path: Path to templates
+		templateRootPath = EXT:example_package/Resources/Private/Templates/
+	}
+}

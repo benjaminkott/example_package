@@ -1,0 +1,46 @@
+## DEPENDENCIES
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:css_styled_content/static/setup.txt">
+
+## CONTENT SELECTION
+lib.dynamicContent = COA
+lib.dynamicContent {
+	5 = LOAD_REGISTER
+	5.colPos.cObject = TEXT
+	5.colPos.cObject {
+		field = colPos
+		ifEmpty.cObject = TEXT
+		ifEmpty.cObject {
+			value.current = 1
+			ifEmpty = 0
+		}
+	}
+	20 < styles.content.get
+	20.select.where = colPos={register:colPos}
+	20.select.where.insertData = 1
+	90 = RESTORE_REGISTER
+}
+
+## PAGE
+page = PAGE
+page {
+	typeNum = 0
+	10 = FLUIDTEMPLATE
+	10 {
+		file.stdWrap.cObject = CASE
+		file.stdWrap.cObject {
+			key.data = levelfield:-1, backend_layout_next_level, slide
+			key.override.field = backend_layout
+			default = TEXT
+			default.value = {$page.template.templateRootPath}Default.html
+			default.insertData = 1
+		}
+		partialRootPath = {$page.template.partialRootPath}
+		layoutRootPath = {$page.template.layoutRootPath}
+	}
+	includeCSS {
+		main = EXT:example_package/Resources/Public/Css/main.css
+	}
+	includeJSFooterlibs {
+		main = EXT:example_package/Resources/Public/JavaScript/main.js
+	}
+}
