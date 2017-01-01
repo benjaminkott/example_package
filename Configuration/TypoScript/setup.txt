@@ -36,11 +36,25 @@ page {
 		}
 		partialRootPath = {$page.template.partialRootPath}
 		layoutRootPath = {$page.template.layoutRootPath}
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            10 {
+                levels = 2
+                includeSpacer = 1
+                as = mainnavigation
+            }
+        }
 	}
 	includeCSS {
-		main = EXT:example_package/Resources/Public/Css/main.css
+		main = https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css
+        main.external = 1
 	}
 	includeJSFooterlibs {
-		main = EXT:example_package/Resources/Public/JavaScript/main.js
+        jquery = https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js
+        jquery.external = 1
+        tether = https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js
+        tether.external = 1
+		main = https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js
+        main.external = 1
 	}
 }
