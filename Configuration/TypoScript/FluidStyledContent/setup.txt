@@ -1,0 +1,3 @@
+## DEPENDENCIES
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/Static/setup.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:example_package/Configuration/TypoScript/Global/setup.txt">
