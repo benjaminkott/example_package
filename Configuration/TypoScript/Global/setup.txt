@@ -11,9 +11,15 @@ lib.dynamicContent {
 			ifEmpty = 0
 		}
 	}
-	20 < styles.content.get
-	20.select.where = colPos={register:colPos}
-	20.select.where.insertData = 1
+	20 = CONTENT
+    20 {
+        table = tt_content
+        select {
+            orderBy = sorting
+            where = colPos={register:colPos}
+            where.insertData = 1
+        }
+    }
 	90 = RESTORE_REGISTER
 }
 
