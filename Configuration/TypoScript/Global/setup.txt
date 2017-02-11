@@ -1,17 +1,17 @@
 ## CONTENT SELECTION
 lib.dynamicContent = COA
 lib.dynamicContent {
-	5 = LOAD_REGISTER
-	5.colPos.cObject = TEXT
-	5.colPos.cObject {
-		field = colPos
-		ifEmpty.cObject = TEXT
-		ifEmpty.cObject {
-			value.current = 1
-			ifEmpty = 0
-		}
-	}
-	20 = CONTENT
+    5 = LOAD_REGISTER
+    5.colPos.cObject = TEXT
+    5.colPos.cObject {
+        field = colPos
+        ifEmpty.cObject = TEXT
+        ifEmpty.cObject {
+            value.current = 1
+            ifEmpty = 0
+        }
+    }
+    20 = CONTENT
     20 {
         table = tt_content
         select {
@@ -20,7 +20,7 @@ lib.dynamicContent {
             where.insertData = 1
         }
     }
-	90 = RESTORE_REGISTER
+    90 = RESTORE_REGISTER
 }
 
 ## PAGE
