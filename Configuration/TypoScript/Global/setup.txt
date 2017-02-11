@@ -31,16 +31,16 @@ page {
     10 {
         templateName = Default
         templateRootPaths {
-            0 = EXT:example_package/Resources/Private/Layouts/Page/
-            10 = {$page.template.layoutRootPath}
+            0 = EXT:example_package/Resources/Private/Templates/Page/
+            1 = {$page.template.templateRootPath}
         }
         partialRootPaths {
             0 = EXT:example_package/Resources/Private/Partials/Page/
-            10 = {$page.template.partialRootPath}
-        } 
+            1 = {$page.template.partialRootPath}
+        }
         layoutRootPaths {
-            0 = EXT:example_package/Resources/Private/Templates/Page/
-            10 = {$page.template.layoutRootPath}
+            0 = EXT:example_package/Resources/Private/Layouts/Page/
+            1 = {$page.template.layoutRootPath}
         }
         dataProcessing {
             10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
