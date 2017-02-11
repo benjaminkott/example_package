@@ -2,10 +2,10 @@
 page {
 	template {
 		# cat=example package: advanced/100/100; type=string; label=Layout Root Path: Path to layouts
-		layoutRootPath = EXT:example_package/Resources/Private/Layouts/
+		layoutRootPath = EXT:example_package/Resources/Private/Layouts/Page/
 		# cat=example package: advanced/100/110; type=string; label=Partial Root Path: Path to partials
-		partialRootPath = EXT:example_package/Resources/Private/Partials/
+		partialRootPath = EXT:example_package/Resources/Private/Partials/Page/
 		# cat=example package: advanced/100/120; type=string; label=Template Root Path: Path to templates
-		templateRootPath = EXT:example_package/Resources/Private/Templates/
+		templateRootPath = EXT:example_package/Resources/Private/Templates/Page/
 	}
 }

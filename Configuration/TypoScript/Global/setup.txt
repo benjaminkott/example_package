@@ -26,19 +26,22 @@ lib.dynamicContent {
 ## PAGE
 page = PAGE
 page {
-	typeNum = 0
-	10 = FLUIDTEMPLATE
-	10 {
-		file.stdWrap.cObject = CASE
-		file.stdWrap.cObject {
-			key.data = levelfield:-1, backend_layout_next_level, slide
-			key.override.field = backend_layout
-			default = TEXT
-			default.value = {$page.template.templateRootPath}Default.html
-			default.insertData = 1
-		}
-		partialRootPath = {$page.template.partialRootPath}
-		layoutRootPath = {$page.template.layoutRootPath}
+    typeNum = 0
+    10 = FLUIDTEMPLATE
+    10 {
+        templateName = Default
+        templateRootPaths {
+            0 = EXT:example_package/Resources/Private/Layouts/Page/
+            10 = {$page.template.layoutRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:example_package/Resources/Private/Partials/Page/
+            10 = {$page.template.partialRootPath}
+        } 
+        layoutRootPaths {
+            0 = EXT:example_package/Resources/Private/Templates/Page/
+            10 = {$page.template.layoutRootPath}
+        }
         dataProcessing {
             10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
             10 {
@@ -47,17 +50,17 @@ page {
                 as = mainnavigation
             }
         }
-	}
-	includeCSS {
-		main = https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css
+    }
+    includeCSS {
+        main = https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css
         main.external = 1
-	}
-	includeJSFooterlibs {
+    }
+    includeJSFooterlibs {
         jquery = https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js
         jquery.external = 1
         tether = https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js
         tether.external = 1
-		main = https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js
+        main = https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js
         main.external = 1
-	}
+    }
 }
